@@ -12,14 +12,11 @@
 ## Links do Projeto
 
 ### Repositório no GitHub
-**URL:** `https://github.com/[SEU_USUARIO]/mottuvision-devops`
+**URL:** `https://github.com/thiago0v/gsdevoops.git`
 
 > ⚠️ **Instruções:** Após criar o repositório no GitHub, substitua `[SEU_USUARIO]` pelo seu nome de usuário e faça o commit de todo o código.
 
-### Vídeo Demonstrativo no YouTube
-**URL:** `https://www.youtube.com/watch?v=[VIDEO_ID]`
 
-> ⚠️ **Instruções:** Após fazer upload do vídeo no YouTube, substitua `[VIDEO_ID]` pelo ID do seu vídeo.
 
 ---
 
@@ -207,7 +204,7 @@ Scripts automatizados para validação de todas as operações CRUD:
 
 **1. Clonar o repositório:**
 ```bash
-git clone https://github.com/[SEU_USUARIO]/mottuvision-devops
+git clone https://github.com/thiago0v/gsdevoops.git
 cd mottuvision-devops
 ```
 
