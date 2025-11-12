@@ -1,0 +1,38 @@
+flowchart TB
+    Dev[Desenvolvedor]
+    
+    subgraph Local["Ambiente Local"]
+        Code[Código Java<br/>Spring Boot]
+        Docker[Dockerfile]
+        Build[Maven Build]
+    end
+    
+    subgraph Azure["Microsoft Azure"]
+        subgraph RG["Resource Group: rg-mottuvision-prod"]
+            ACR[Azure Container Registry<br/>acrmottuvision.azurecr.io]
+            
+            ACI[Azure Container Instance<br/>aci-mottuvision-app<br/>CPU: 1 core<br/>RAM: 1.5 GB]
+            
+            DB[(Azure Database for PostgreSQL<br/>psql-mottuvision-server<br/>Version: 16<br/>SKU: B_Gen5_1)]
+        end
+    end
+    
+    User[Usuário Final]
+    Browser[Navegador Web]
+    
+    Dev -->|1. Desenvolve| Code
+    Code -->|2. Cria| Docker
+    Code & Docker -->|3. Build| Build
+    Build -->|4. Push Image| ACR
+    
+    ACR -->|5. Pull Image| ACI
+    ACI -->|6. Conecta| DB
+    
+    User -->|7. Acessa| Browser
+    Browser -->|HTTP:8080| ACI
+    
+    style ACR fill:#0078D4
+    style ACI fill:#0078D4
+    style DB fill:#336791
+    style Azure fill:#e1f5ff
+    style RG fill:#f0f0f0

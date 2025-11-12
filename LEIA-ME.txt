@@ -1,0 +1,124 @@
+================================================================================
+MOTTUVISION - PROJETO DEVOPS & CLOUD COMPUTING
+Sprint 3 - FIAP
+================================================================================
+
+INTEGRANTES:
+- Thiago Alves (RM 556805)
+- Vinicius Beda (RM 554914)
+
+================================================================================
+CONTEÚDO DESTE ZIP
+================================================================================
+
+1. DOCUMENTAÇÃO
+   - README.md - Documentação completa do projeto
+   - TESTE_LOCAL.md - Guia para testes locais
+   - CHANGELOG.md - Registro de mudanças
+   - CHECKLIST_ENTREGA.md - Checklist de requisitos
+   - docs/ENTREGA_SPRINT3_DEVOPS_FINAL.pdf - PDF DE ENTREGA OFICIAL
+
+2. CÓDIGO-FONTE
+   - src/ - Código Java Spring Boot completo
+   - pom.xml - Configuração Maven
+
+3. DOCKER
+   - docker/Dockerfile - Multi-stage build otimizado
+   - docker/docker-compose.yml - Ambiente local completo
+   - .dockerignore - Arquivos excluídos do build
+
+4. AZURE (Scripts de Deploy)
+   - azure-scripts/01-setup-azure.sh - Provisionar infraestrutura
+   - azure-scripts/02-build-and-push.sh - Build e push da imagem
+   - azure-scripts/03-deploy-aci.sh - Deploy no ACI
+   - azure-scripts/docker-commands.sh - Referência de comandos
+
+5. BANCO DE DADOS
+   - database/script_bd.sql - DDL completo com comentários
+   - database/init.sql - Script de inicialização Docker
+
+6. TESTES
+   - tests/crud-tests-updated.sh - Testes CRUD automatizados
+   - tests/postman-collection.json - Coleção Postman
+
+7. DIAGRAMAS
+   - docs/arquitetura-mottuvision.png - Diagrama de arquitetura
+
+================================================================================
+INÍCIO RÁPIDO
+================================================================================
+
+OPÇÃO 1: TESTE LOCAL (Docker)
+------------------------------
+1. Instalar Docker e Docker Compose
+2. Executar:
+   cd mottuvision-devops
+   docker-compose -f docker/docker-compose.yml up -d
+3. Acessar: http://localhost:8080
+   Login: admin@mottu.com / 123456
+
+OPÇÃO 2: DEPLOY NO AZURE
+-------------------------
+1. Instalar Azure CLI e fazer login (az login)
+2. Executar scripts na ordem:
+   cd azure-scripts
+   ./01-setup-azure.sh
+   ./02-build-and-push.sh
+   ./03-deploy-aci.sh
+3. Acessar URL fornecida pelo script
+
+================================================================================
+ENDPOINTS DA API REST
+================================================================================
+
+GET    /api/motos       - Lista todas as motos
+GET    /api/motos/{id}  - Busca moto por ID
+POST   /api/motos       - Cria nova moto
+PUT    /api/motos/{id}  - Atualiza moto
+DELETE /api/motos/{id}  - Deleta moto
+
+================================================================================
+LINKS IMPORTANTES
+================================================================================
+
+REPOSITÓRIO GITHUB:
+https://github.com/[SEU_USUARIO]/mottuvision-devops
+
+VÍDEO YOUTUBE:
+https://www.youtube.com/watch?v=[VIDEO_ID]
+
+IMPORTANTE: Após criar o repositório e fazer upload do vídeo, atualize
+os links no arquivo docs/ENTREGA_SPRINT3_DEVOPS_FINAL.pdf
+
+================================================================================
+REQUISITOS ATENDIDOS
+================================================================================
+
+✅ Descrição da solução
+✅ Benefícios para o negócio
+✅ Banco de dados PostgreSQL na nuvem
+✅ CRUD completo implementado
+✅ 2+ registros reais no banco
+✅ Código-fonte no GitHub
+✅ PDF com nome, RM e links
+✅ Imagens oficiais do Docker Hub
+✅ Container não-root (UID 1001)
+✅ Dockerfile e Docker Compose
+✅ Scripts de build e execução
+✅ Diagrama de arquitetura
+✅ DDL completo com comentários
+✅ README.md com passo a passo
+✅ Scripts de teste CRUD
+
+================================================================================
+SUPORTE
+================================================================================
+
+Em caso de dúvidas, consulte:
+1. README.md - Documentação completa
+2. TESTE_LOCAL.md - Guia de testes
+3. docs/ENTREGA_SPRINT3_DEVOPS_FINAL.pdf - Documento oficial
+
+================================================================================
+BOA SORTE NA APRESENTAÇÃO! 🚀
+================================================================================

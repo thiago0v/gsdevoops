@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head('Dashboard - MottuVision')"></head>
+<body>
+<div th:replace="fragments :: navbar"></div>
+
+<div class="container">
+    <h2 class="mb-3">Dashboard - <span th:text="${filial.nome}"></span></h2>
+    <p class="text-muted">Bem-vindo, <span th:text="${usuario.email}"></span></p>
+
+    <div class="row mt-4">
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Total de motos no pátio</h5>
+                    <p class="display-5" th:text="${totalMotos}">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Motos em alerta</h5>
+                    <p class="display-5 text-danger" th:text="${motosEmAlerta}">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Status geral</h5>
+                    <p class="lead" th:text="${motosEmAlerta == 0 ? 'Operação normal' : 'Atenção necessária'}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="/motos" class="btn btn-outline-primary me-2">Ver motos</a>
+        <a href="/mapa" class="btn btn-outline-secondary me-2">Mapa do pátio</a>
+        <a href="/alertas" class="btn btn-outline-danger">Alertas</a>
+    </div>
+</div>
+</body>
+</html>

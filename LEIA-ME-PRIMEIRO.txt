@@ -1,0 +1,208 @@
+================================================================================
+⚠️  LEIA ISTO PRIMEIRO - IMPORTANTE! ⚠️
+================================================================================
+
+MOTTUVISION - PROJETO DEVOPS & CLOUD COMPUTING
+Sprint 3 - FIAP
+
+INTEGRANTES:
+- Thiago Alves (RM 556805)
+- Vinicius Beda (RM 554914)
+
+================================================================================
+🔐 SEGURANÇA - AÇÃO IMEDIATA NECESSÁRIA
+================================================================================
+
+IMPORTANTE: As credenciais do Azure foram compartilhadas e DEVEM ser alteradas
+imediatamente após o deploy!
+
+COMO TROCAR A SENHA:
+1. Acesse: https://portal.azure.com
+2. Faça login com: rm554914@fiap.com.br / Vini1611@
+3. Clique no seu perfil (canto superior direito)
+4. Selecione "Alterar senha"
+5. Crie uma nova senha forte
+
+================================================================================
+🚀 INÍCIO RÁPIDO - DEPLOY AUTOMÁTICO (RECOMENDADO)
+================================================================================
+
+OPÇÃO MAIS FÁCIL - UM ÚNICO COMANDO:
+
+1. Extrair o ZIP:
+   unzip mottuvision-devops-entrega-final.zip
+   cd mottuvision-devops
+
+2. Executar deploy automático:
+   cd azure-scripts
+   ./00-deploy-completo.sh
+
+   Este script irá:
+   ✅ Verificar pré-requisitos
+   ✅ Fazer login no Azure
+   ✅ Provisionar toda a infraestrutura
+   ✅ Fazer build da aplicação
+   ✅ Fazer deploy no Azure
+   ✅ Testar a aplicação
+
+3. Ao final, você terá:
+   - URL da aplicação funcionando
+   - Credenciais de acesso
+   - Arquivo com todas as informações
+
+TEMPO TOTAL: 15-20 minutos
+
+================================================================================
+📚 DOCUMENTAÇÃO COMPLETA
+================================================================================
+
+Para instruções detalhadas passo a passo, consulte:
+
+📄 GUIA_DEPLOY_AZURE.md
+   - Instruções completas de deploy
+   - Passo a passo detalhado
+   - Troubleshooting
+   - Roteiro para o vídeo
+
+📄 README.md
+   - Documentação geral do projeto
+   - Arquitetura da solução
+   - Benefícios para o negócio
+
+📄 TESTE_LOCAL.md
+   - Como testar localmente com Docker
+   - Alternativa ao deploy no Azure
+
+📄 docs/ENTREGA_SPRINT3_DEVOPS_FINAL.pdf
+   - DOCUMENTO OFICIAL DE ENTREGA
+   - Contém nome, RM e links
+   - Enviar este PDF junto com o link do GitHub
+
+================================================================================
+✅ CHECKLIST RÁPIDO
+================================================================================
+
+ANTES DO DEPLOY:
+[ ] Azure CLI instalado (https://aka.ms/installazurecliwindows)
+[ ] Docker instalado (https://www.docker.com/get-started)
+[ ] Extraiu o ZIP do projeto
+
+DURANTE O DEPLOY:
+[ ] Executou ./00-deploy-completo.sh
+[ ] Anotou a URL da aplicação
+[ ] Testou o acesso web
+[ ] Testou o CRUD via API
+
+APÓS O DEPLOY:
+[ ] Gravou o vídeo demonstrativo
+[ ] Fez upload no YouTube
+[ ] Criou repositório no GitHub
+[ ] Atualizou PDF com os links
+[ ] TROCOU A SENHA DO AZURE ⚠️
+
+================================================================================
+🎬 ROTEIRO DO VÍDEO (10-15 min)
+================================================================================
+
+1. INTRODUÇÃO (1 min)
+   - Apresentar o problema da Mottu
+   - Explicar a solução MottuVision
+
+2. MOSTRAR AZURE PORTAL (2 min)
+   - Resource Group criado
+   - Container Registry
+   - PostgreSQL Database
+   - Container Instance
+
+3. DEMONSTRAR APLICAÇÃO WEB (3 min)
+   - Login
+   - Dashboard
+   - Lista de motos
+   - Detalhes
+   - Mapa do pátio
+
+4. DEMONSTRAR CRUD (5 min)
+   - POST: Criar moto → mostrar no banco
+   - PUT: Atualizar → mostrar no banco
+   - DELETE: Deletar → mostrar no banco
+   - GET: Consultar
+
+5. CONCLUSÃO (1 min)
+   - Benefícios
+   - Escalabilidade
+
+================================================================================
+📞 SUPORTE
+================================================================================
+
+Em caso de problemas:
+
+1. Consulte GUIA_DEPLOY_AZURE.md (seção Troubleshooting)
+2. Verifique os logs: az container logs --name aci-mottuvision-app --resource-group rg-mottuvision-prod
+3. Reinicie o container: az container restart --name aci-mottuvision-app --resource-group rg-mottuvision-prod
+
+ERROS COMUNS:
+
+"Resource already exists"
+→ Solução: az group delete --name rg-mottuvision-prod --yes
+
+"ACR name not available"
+→ Solução: Editar 01-setup-azure.sh e mudar ACR_NAME
+
+"Container não inicia"
+→ Solução: Verificar logs com comando acima
+
+================================================================================
+💰 CUSTOS E LIMPEZA
+================================================================================
+
+CUSTO ESTIMADO: ~$65/mês
+
+APÓS A APRESENTAÇÃO, DELETE OS RECURSOS:
+az group delete --name rg-mottuvision-prod --yes
+
+Isso irá deletar:
+- Resource Group
+- Container Registry
+- Container Instance
+- PostgreSQL Database
+- Todos os dados
+
+================================================================================
+📂 ESTRUTURA DO PROJETO
+================================================================================
+
+mottuvision-devops/
+├── azure-scripts/
+│   ├── 00-deploy-completo.sh     ⭐ EXECUTE ESTE!
+│   ├── 01-setup-azure.sh
+│   ├── 02-build-and-push.sh
+│   └── 03-deploy-aci.sh
+├── docs/
+│   └── ENTREGA_SPRINT3_DEVOPS_FINAL.pdf  ⭐ ENTREGAR ESTE!
+├── database/
+│   └── script_bd.sql
+├── tests/
+│   └── crud-tests-updated.sh
+├── GUIA_DEPLOY_AZURE.md          ⭐ LER ESTE!
+└── README.md
+
+================================================================================
+🎯 PRÓXIMOS PASSOS
+================================================================================
+
+1. AGORA: Trocar senha do Azure
+2. HOJE: Fazer deploy com ./00-deploy-completo.sh
+3. HOJE: Gravar vídeo
+4. HOJE: Upload no YouTube
+5. HOJE: Criar repositório GitHub
+6. HOJE: Atualizar PDF com links
+7. HOJE: Submeter entrega
+
+================================================================================
+
+BOA SORTE NA APRESENTAÇÃO! 🚀
+
+Thiago Alves (RM 556805) e Vinicius Beda (RM 554914)
+
+================================================================================

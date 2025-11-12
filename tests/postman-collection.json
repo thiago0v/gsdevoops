@@ -1,0 +1,158 @@
+{
+  "info": {
+    "name": "MottuVision - CRUD Tests",
+    "description": "Coleção de testes CRUD para a API do MottuVision",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://<IP_DO_SEU_ACI>:8080",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. GET - Listar todas as motos",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/motos",
+          "host": ["{{base_url}}"],
+          "path": ["motos"]
+        },
+        "description": "Retorna a lista de todas as motos cadastradas no sistema"
+      }
+    },
+    {
+      "name": "2. GET - Buscar moto por ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/motos/1",
+          "host": ["{{base_url}}"],
+          "path": ["motos", "1"]
+        },
+        "description": "Retorna os detalhes de uma moto específica pelo ID"
+      }
+    },
+    {
+      "name": "3. POST - Criar nova moto",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"placa\": \"NEW1A23\",\n    \"modelo\": \"Honda Biz 125\",\n    \"ano\": 2024,\n    \"filialId\": 1,\n    \"status\": \"DISPONIVEL\",\n    \"posicaoX\": 10,\n    \"posicaoY\": 10\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/motos",
+          "host": ["{{base_url}}"],
+          "path": ["motos"]
+        },
+        "description": "Cria uma nova moto no sistema"
+      }
+    },
+    {
+      "name": "4. PUT - Atualizar moto",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"placa\": \"ABC1D23\",\n    \"modelo\": \"Honda CG 160\",\n    \"ano\": 2023,\n    \"filialId\": 1,\n    \"status\": \"MANUTENCAO\",\n    \"posicaoX\": 5,\n    \"posicaoY\": 3\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/motos/1",
+          "host": ["{{base_url}}"],
+          "path": ["motos", "1"]
+        },
+        "description": "Atualiza os dados de uma moto existente"
+      }
+    },
+    {
+      "name": "5. DELETE - Deletar moto",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/motos/2",
+          "host": ["{{base_url}}"],
+          "path": ["motos", "2"]
+        },
+        "description": "Remove uma moto do sistema"
+      }
+    },
+    {
+      "name": "6. GET - Dashboard",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/dashboard",
+          "host": ["{{base_url}}"],
+          "path": ["api", "dashboard"]
+        },
+        "description": "Retorna os dados do dashboard (métricas gerais)"
+      }
+    },
+    {
+      "name": "7. GET - Listar alertas",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/alertas",
+          "host": ["{{base_url}}"],
+          "path": ["api", "alertas"]
+        },
+        "description": "Retorna a lista de alertas ativos"
+      }
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+================================================================================
+RESUMO DE ARQUIVOS IMPORTANTES - MottuVision
+================================================================================
+
+📄 DOCUMENTOS PARA LEITURA (EM ORDEM DE IMPORTÂNCIA):
+
+1. ⭐ LEIA-ME-PRIMEIRO.txt
+   → Instruções de início rápido e checklist
+
+2. ⭐ GUIA_DEPLOY_AZURE.md
+   → Passo a passo completo do deploy
+
+3. README.md
+   → Documentação geral do projeto
+
+4. TESTE_LOCAL.md
+   → Como testar localmente sem Azure
+
+5. CHANGELOG.md
+   → Registro de todas as mudanças
+
+================================================================================
+
+📄 DOCUMENTOS PARA ENTREGA:
+
+1. ⭐⭐⭐ docs/ENTREGA_SPRINT3_DEVOPS_FINAL.pdf
+   → DOCUMENTO OFICIAL COM NOME, RM E LINKS
+   → ESTE É O ARQUIVO QUE DEVE SER ENVIADO!
+
+2. database/script_bd.sql
+   → DDL completo do banco de dados
+
+3. docs/arquitetura-mottuvision.png
+   → Diagrama de arquitetura
+
+================================================================================
+
+🔧 SCRIPTS DE DEPLOY (EXECUTAR NESTA ORDEM):
+
+1. ⭐ azure-scripts/00-deploy-completo.sh
+   → SCRIPT AUTOMÁTICO - EXECUTA TUDO DE UMA VEZ!
+   → RECOMENDADO PARA INICIANTES
+
+OU (deploy manual passo a passo):
+
+2. azure-scripts/01-setup-azure.sh
+   → Provisiona infraestrutura
+
+3. azure-scripts/02-build-and-push.sh
+   → Build e push da imagem
+
+4. azure-scripts/03-deploy-aci.sh
+   → Deploy no ACI
+
+================================================================================
+
+🧪 SCRIPTS DE TESTE:
+
+1. tests/crud-tests-updated.sh
+   → Testes automatizados de CRUD
+   → Executar após o deploy
+
+2. tests/postman-collection.json
+   → Coleção Postman para testes manuais
+
+================================================================================
+
+🐳 DOCKER:
+
+1. docker/Dockerfile
+   → Multi-stage build otimizado
+
+2. docker/docker-compose.yml
+   → Ambiente local completo
+
+================================================================================
+
+💻 CÓDIGO-FONTE PRINCIPAL:
+
+1. src/main/java/br/com/mottu/mottuvision/controller/MotoRestController.java
+   → API REST com CRUD completo
+
+2. src/main/java/br/com/mottu/mottuvision/dto/MotoDTO.java
+   → Data Transfer Object
+
+3. src/main/java/br/com/mottu/mottuvision/security/SecurityConfig.java
+   → Configuração de segurança
+
+4. pom.xml
+   → Dependências Maven
+
+================================================================================
+
+📊 COMO USAR ESTE PROJETO:
+
+OPÇÃO 1 - DEPLOY AUTOMÁTICO (RECOMENDADO):
+1. Extrair o ZIP
+2. cd mottuvision-devops/azure-scripts
+3. ./00-deploy-completo.sh
+4. Seguir as instruções na tela
+
+OPÇÃO 2 - TESTE LOCAL (SEM AZURE):
+1. Extrair o ZIP
+2. cd mottuvision-devops
+3. docker-compose -f docker/docker-compose.yml up -d
+4. Acessar http://localhost:8080
+
+OPÇÃO 3 - DEPLOY MANUAL (PASSO A PASSO):
+1. Ler GUIA_DEPLOY_AZURE.md
+2. Executar scripts 01, 02 e 03 na ordem
+
+================================================================================
+
+✅ CHECKLIST DE ENTREGA:
+
+[ ] Ler LEIA-ME-PRIMEIRO.txt
+[ ] Executar deploy (automático ou manual)
+[ ] Testar aplicação web
+[ ] Testar CRUD via API
+[ ] Gravar vídeo demonstrativo
+[ ] Upload vídeo no YouTube
+[ ] Criar repositório no GitHub
+[ ] Atualizar PDF com links do GitHub e YouTube
+[ ] Enviar PDF + link do GitHub
+[ ] TROCAR SENHA DO AZURE!
+
+================================================================================
+
+🎯 ARQUIVOS QUE VOCÊ PRECISA ENVIAR:
+
+1. Link do repositório GitHub (com todo o código)
+2. docs/ENTREGA_SPRINT3_DEVOPS_FINAL.pdf (atualizado com os links)
+
+================================================================================
+
+Thiago Alves (RM 556805) e Vinicius Beda (RM 554914)
+
+================================================================================

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head('Alertas - MottuVision')"></head>
+<body>
+<div th:replace="fragments :: navbar"></div>
+
+<div class="container">
+    <h2 class="mb-3">Últimos alertas</h2>
+
+    <div th:if="${#lists.isEmpty(alertas)}" class="alert alert-success">
+        Nenhum alerta recente. Operação estável.
+    </div>
+
+    <div th:if="${!#lists.isEmpty(alertas)}">
+        <table class="table align-middle">
+            <thead>
+            <tr>
+                <th>Data/Hora</th>
+                <th>Tipo</th>
+                <th>Moto</th>
+                <th>Mensagem</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="alerta : ${alertas}">
+                <td th:text="${#temporals.format(alerta.dataHora, 'dd/MM/yyyy HH:mm')}"></td>
+                <td th:text="${alerta.tipo}"></td>
+                <td th:text="${alerta.moto.placa}"></td>
+                <td th:text="${alerta.mensagem}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
